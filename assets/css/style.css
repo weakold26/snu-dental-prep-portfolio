@@ -394,8 +394,8 @@ a { color: inherit; text-decoration: none; }
 
 .section-desc {
   margin: 8px 0 0;
-  max-width: 600px;
-  text-wrap: pretty;
+  max-width: 620px;
+  text-wrap: balance;
   font-size: 14px;
   color: var(--muted);
   line-height: 1.7;
