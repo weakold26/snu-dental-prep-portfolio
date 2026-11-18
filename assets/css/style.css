@@ -653,6 +653,7 @@ a { color: inherit; text-decoration: none; }
 .case-thumb {
   aspect-ratio: 4 / 3;
   width: 100%;
+  flex: 0 0 auto;
   position: relative;
 }
 
