@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>프렙 포트폴리오 · 서울대학교 치의학대학원</title>
+<meta name="description" content="서울대학교 치의학대학원 전임상 실습·원내생진료 프렙 포트폴리오. 케이스별 치식, 사용 버, 자가평가, 다각도 사진 기록.">
+<meta name="author" content="weakold26">
+<meta name="theme-color" content="#0F2D75">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="프렙 포트폴리오 · 서울대학교 치의학대학원">
+<meta property="og:description" content="전임상 실습에서 원내생진료까지 — 마네킹 프렙과 임상 케이스를 한 곳에 누적합니다.">
+<meta property="og:image" content="assets/img/logo.png">
+<meta name="twitter:card" content="summary">
+
+<link rel="icon" type="image/png" href="assets/img/mobileicon.png">
+<link rel="apple-touch-icon" href="assets/img/mobileicon.png">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body id="top">
+
+<div class="topline"></div>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="#top" aria-label="서울대학교 치의학대학원 — 프렙 포트폴리오">
+      <img class="brand-logo" src="assets/img/logo.png" width="319" height="61"
+           alt="서울대학교 치의학대학원 School of Dentistry, Seoul National University">
+      <span class="brand-divider" aria-hidden="true"></span>
+      <span class="brand-text">
+        <span class="brand-title">프렙 포트폴리오</span>
+        <span class="brand-sub">Prep Portfolio</span>
+      </span>
+    </a>
+
+    <nav class="nav" aria-label="주요 섹션">
+      <a href="#tracks">트랙</a>
+      <a href="#collection">케이스</a>
+      <a href="#roadmap">로드맵</a>
+      <a href="#guide">활용 안내</a>
+    </nav>
+
+    <div class="header-actions">
+      <button type="button" class="btn btn-ghost" id="btn-export" title="현재 기록을 JSON 파일로 내려받기">JSON 내보내기</button>
+      <button type="button" class="btn btn-ghost" id="btn-import" title="JSON 백업 파일 불러오기">가져오기</button>
+      <button type="button" class="btn btn-primary" id="btn-new">+ 새 실습 등록</button>
+    </div>
+  </div>
+</header>
+
+<!-- ============================================================== HERO -->
+<section class="hero">
+  <div class="wrap hero-inner">
+    <p class="eyebrow">Seoul National University · School of Dentistry</p>
+    <h1>손끝의 기록,<br><span class="accent">프렙 포트폴리오.</span></h1>
+    <p class="hero-lead">
+      마네킹에서 시작한 <strong>와동 형성과 크라운 프렙</strong>을 치식·사용 버·자가평가와 함께 남깁니다.
+      본과 3학년 <strong>원내생진료</strong>로 이어질 때, 같은 구조에 실제 환자 케이스를 그대로 쌓아 올릴 수 있습니다.
+    </p>
+
+    <div class="hero-meta">
+      <span class="chip"><span class="dot" aria-hidden="true"></span>본과 2학년 · 2022학번</span>
+      <span class="chip">전임상 → 원내생진료</span>
+      <span class="chip chip-code">weakold26</span>
+    </div>
+
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-num" id="stat-cases">8<small>건</small></div>
+        <div class="stat-label">등록된 케이스</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" id="stat-photos">0<small>/32</small></div>
+        <div class="stat-label">채워진 사진</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" id="stat-subjects">5<small>과목</small></div>
+        <div class="stat-label">실습 과목</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" id="stat-tracks">2<small>트랙</small></div>
+        <div class="stat-label">전임상 · 원내생진료</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ TRACKS -->
+<section class="section" id="tracks">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="section-kicker">Two Tracks</p>
+        <h2 class="section-title">전임상에서 원내생진료까지, 하나의 기록</h2>
+        <p class="section-desc">같은 카드 구조를 씁니다. 트랙만 바꿔 등록하면 본3 원내생진료 케이스가 같은 타임라인에 쌓입니다.</p>
+      </div>
+    </div>
+    <div class="track-grid" id="track-grid"></div>
+  </div>
+</section>
+
+<!-- ======================================================== COLLECTION -->
+<section class="section collection" id="collection">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="section-kicker">Case Collection</p>
+        <h2 class="section-title">프렙 케이스</h2>
+        <p class="section-desc">카드를 누르면 다각도 사진 자리와 자가평가·피드백을 봅니다. <b>(사진)</b> 칸을 클릭하면 바로 사진을 넣을 수 있습니다.</p>
+      </div>
+      <div class="search">
+        <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="1.7"/><path d="m13.5 13.5 3 3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+        <label class="sr-only" for="search-input">케이스 검색</label>
+        <input type="text" id="search-input" placeholder="치식 · 프렙명 · 버 검색" autocomplete="off">
+      </div>
+    </div>
+
+    <div class="filterbar">
+      <div class="segmented" id="track-filter" role="group" aria-label="트랙 필터">
+        <button type="button" data-track="all" aria-pressed="true">전체</button>
+        <button type="button" data-track="preclinical" aria-pressed="false">전임상</button>
+        <button type="button" data-track="clinic" aria-pressed="false">원내생진료</button>
+      </div>
+      <span class="filter-divider" aria-hidden="true"></span>
+      <div class="subject-chips" id="subject-filter" role="group" aria-label="과목 필터">
+        <button type="button" data-subject="all" aria-pressed="true">전체 과목</button>
+      </div>
+    </div>
+
+    <div class="case-grid" id="case-grid" aria-live="polite"></div>
+  </div>
+</section>
+
+<!-- =========================================================== ROADMAP -->
+<section class="section" id="roadmap">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="section-kicker">Roadmap</p>
+        <h2 class="section-title">원내생진료로 이어지는 경로</h2>
+        <p class="section-desc">지금은 전임상 단계입니다. 단계가 바뀔 때 새 트랙을 만들지 않고 기록만 이어 붙입니다.</p>
+      </div>
+    </div>
+
+    <div class="roadmap">
+      <div class="road-step is-now">
+        <div class="road-year">2026 · 본2</div>
+        <div class="road-title">전임상 실습<span class="now-tag">NOW</span></div>
+        <p class="road-body">마네킹·덴티폼 프렙. 와동 형성, 크라운 삭제, 치수강 개방의 기본기를 수치로 기록합니다.</p>
+      </div>
+      <div class="road-step is-next">
+        <div class="road-year">2027 · 본3</div>
+        <div class="road-title">임상 전환</div>
+        <p class="road-body">교내 진료 참관과 모델 반복. 같은 술식을 환자 조건(치은연하, 인접 치아)에 맞춰 다시 점검합니다.</p>
+      </div>
+      <div class="road-step">
+        <div class="road-year">2027–2028 · 본3–4</div>
+        <div class="road-title">원내생진료</div>
+        <p class="road-body">실제 환자 케이스. 술전 → 프렙 후 → 인상 → 장착까지 한 카드에 누적하고, 지도교수 피드백을 함께 남깁니다.</p>
+      </div>
+      <div class="road-step">
+        <div class="road-year">2029 · 졸업 이후</div>
+        <div class="road-title">진료 역량 아카이브</div>
+        <p class="road-body">누적된 케이스가 그대로 실기 대비·수련 지원·개원 준비 자료가 됩니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================= GUIDE -->
+<section class="section collection" id="guide">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="section-kicker">How to use</p>
+        <h2 class="section-title">사진 넣기 · 백업 · 보관</h2>
+        <p class="section-desc">처음 상태의 모든 사진 자리는 검은색 <b>(사진)</b> 빈칸입니다. 세 가지 방법으로 채웁니다.</p>
+      </div>
+    </div>
+
+    <div class="guide-grid">
+      <div class="guide-card">
+        <span class="guide-num">1</span>
+        <h3>카드에서 바로 사진 넣기</h3>
+        <p>카드를 눌러 상세를 열고 <b>(사진)</b> 칸을 클릭하면 파일 선택창이 뜹니다. 넣은 사진은 이 브라우저에 저장되어 새로고침해도 유지됩니다. <b>×</b> 를 누르면 빈칸으로 되돌아갑니다.</p>
+      </div>
+      <div class="guide-card">
+        <span class="guide-num">2</span>
+        <h3>저장소에 사진 올려 연결하기</h3>
+        <p>사진을 <code>assets/photos/</code> 에 올리고 <code>assets/js/data.js</code> 의 <code>src: null</code> 을 경로로 바꿉니다. 이 방법은 어느 기기에서나 똑같이 보이고, 기록이 저장소에 남습니다.</p>
+      </div>
+      <div class="guide-card">
+        <span class="guide-num">3</span>
+        <h3>JSON 백업 · 복원</h3>
+        <p>상단 <b>JSON 내보내기</b> 로 지금까지의 케이스와 사진을 파일 하나로 내려받습니다. 다른 기기에서 <b>가져오기</b> 로 불러오면 이어서 작업할 수 있습니다.</p>
+      </div>
+    </div>
+
+    <div class="note">
+      <svg class="note-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.6"/><path d="M10 9v5M10 6.4v.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      <div>
+        기본 8개 케이스는 <b>구조 예시</b>입니다. 실제 실습 기록으로 제목·수치·피드백을 바꿔 쓰세요.
+        원내생진료 슬롯 2개는 본3 진료가 시작될 때 그대로 복제해 쓰도록 만들어 두었습니다.
+        사진에는 환자 식별 정보(얼굴, 이름, 차트 번호)가 찍히지 않게 해 주세요.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ FOOTER -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-inner">
+      <div>
+        <img class="footer-logo" src="assets/img/logoW.png" width="319" height="61"
+             alt="서울대학교 치의학대학원 School of Dentistry, Seoul National University">
+        <p class="footer-about">
+          전임상 실습과 원내생진료 프렙 기록을 위한 개인 포트폴리오입니다.
+          학습 목적의 기록이며, 실제 진료에 사용하는 자료가 아닙니다.
+        </p>
+      </div>
+      <div class="footer-right">
+        <div>SNU School of Dentistry · Class of 2022</div>
+        <div><a href="https://github.com/weakold26/snu-dental-prep-portfolio" target="_blank" rel="noopener">github.com/weakold26/snu-dental-prep-portfolio</a></div>
+        <div class="footer-meta">
+          <span>Preclinical</span>
+          <span>Student Clinic</span>
+          <span>FDI notation</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-rule"></div>
+    <div class="footer-bottom">
+      <span>© 2026 weakold26. 개인 학습 기록.</span>
+      <span>Seoul National University School of Dentistry</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ======================================================= DETAIL MODAL -->
+<div class="modal" id="modal-detail" data-open="false" role="dialog" aria-modal="true" aria-labelledby="detail-title">
+  <div class="modal-backdrop" data-close="detail"></div>
+  <div class="modal-panel" role="document">
+    <div class="modal-head">
+      <div class="modal-head-main">
+        <div class="modal-eyebrow" id="detail-eyebrow"></div>
+        <h2 class="modal-title" id="detail-title"></h2>
+        <p class="modal-sub" id="detail-sub"></p>
+      </div>
+      <button type="button" class="icon-btn" data-close="detail" aria-label="닫기">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <div class="modal-body" id="detail-body"></div>
+    <div class="modal-foot">
+      <span class="modal-foot-note">(사진) 칸을 클릭하면 그 각도의 사진을 넣을 수 있습니다 · 이 브라우저에만 저장됩니다</span>
+      <button type="button" class="btn btn-ghost" data-close="detail">닫기</button>
+    </div>
+  </div>
+</div>
+
+<!-- ========================================================== NEW MODAL -->
+<div class="modal" id="modal-new" data-open="false" role="dialog" aria-modal="true" aria-labelledby="new-title">
+  <div class="modal-backdrop" data-close="new"></div>
+  <div class="modal-panel is-narrow" role="document">
+    <div class="modal-head">
+      <div class="modal-head-main">
+        <div class="modal-eyebrow">New Record</div>
+        <h2 class="modal-title" id="new-title">새 실습 / 프렙 등록</h2>
+        <p class="modal-sub">사진을 넣지 않으면 검은색 (사진) 빈칸으로 남습니다. 나중에 카드에서 채울 수 있습니다.</p>
+      </div>
+      <button type="button" class="icon-btn" data-close="new" aria-label="닫기">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+
+    <div class="modal-body">
+      <form id="new-form" novalidate>
+        <div class="form-grid">
+          <div class="field span-2">
+            <label>트랙<span class="req">*</span></label>
+            <div class="seg-field" id="new-track-group">
+              <label><input type="radio" name="track" value="preclinical" checked><span>전임상 실습 · 본2</span></label>
+              <label><input type="radio" name="track" value="clinic"><span>원내생진료 · 본3–4</span></label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="new-subject">과목<span class="req">*</span></label>
+            <select id="new-subject" name="subject"></select>
+          </div>
+
+          <div class="field">
+            <label for="new-tooth">FDI 치식 번호<span class="req">*</span></label>
+            <input type="text" id="new-tooth" name="tooth" placeholder="#46" autocomplete="off">
+            <span class="help">예: #46, #11, #75 (유치 75)</span>
+          </div>
+
+          <div class="field span-2">
+            <label for="new-title">시술 / 프렙명<span class="req">*</span></label>
+            <input type="text" id="new-title-input" name="title" placeholder="예: 2급 금인레이 와동 형성" autocomplete="off">
+          </div>
+
+          <div class="field">
+            <label for="new-course">과목 / 실습명</label>
+            <input type="text" id="new-course" name="course" placeholder="예: 치과보존학실습 I" autocomplete="off">
+          </div>
+
+          <div class="field">
+            <label for="new-date">실습일</label>
+            <input type="date" id="new-date" name="date">
+          </div>
+
+          <div class="field span-2">
+            <label for="new-instruments">사용 기구 / 버</label>
+            <input type="text" id="new-instruments" name="instruments" placeholder="#330 Bur, Round Bur #2, Enamel Chisel" autocomplete="off">
+            <span class="help">쉼표(,)로 구분해 여러 개를 적습니다.</span>
+          </div>
+
+          <div class="field span-2">
+            <label for="new-checks">체크포인트 / 자가평가</label>
+            <input type="text" id="new-checks" name="checks" placeholder="Taper 6–8°, Margin 1.0 mm, Occlusal reduction 1.5 mm" autocomplete="off">
+            <span class="help">쉼표(,)로 구분. 상세 화면에서 항목별로 나뉘어 표시됩니다.</span>
+          </div>
+
+          <div class="field span-2">
+            <label for="new-feedback">교수님 피드백 · 메모</label>
+            <textarea id="new-feedback" name="feedback" placeholder="지도 시 받은 피드백, 다음에 고칠 점을 적어 두세요."></textarea>
+          </div>
+
+          <div class="field span-2">
+            <label>사진 (선택 · 나중에 넣어도 됩니다)</label>
+            <div class="upload-grid" id="upload-grid"></div>
+          </div>
+        </div>
+
+        <div class="form-error" id="new-error" role="alert"></div>
+
+        <div class="form-actions">
+          <button type="button" class="btn btn-ghost" data-close="new">취소</button>
+          <button type="submit" class="btn btn-primary">등록하기</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<input type="file" id="file-input" accept="image/*" hidden>
+<input type="file" id="import-input" accept="application/json,.json" hidden>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
