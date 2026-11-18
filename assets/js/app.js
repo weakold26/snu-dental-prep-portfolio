@@ -825,6 +825,26 @@
       });
     }
 
+    var breset = qs("#btn-reset");
+    if (breset) {
+      breset.addEventListener("click", function () {
+        var ok = window.confirm("이 브라우저에 저장된 새 케이스와 사진을 모두 지우고 처음 상태로 돌립니다. 내려받은 JSON 백업은 그대로 남습니다. 계속할까요?");
+        if (!ok) return;
+        state.photos = {};
+        state.custom = [];
+        saveJSON(KEY_PHOTOS, state.photos);
+        saveJSON(KEY_CASES, state.custom);
+        state.trackFilter = "all";
+        state.subjectFilter = "all";
+        state.query = "";
+        var search = qs("#search-input");
+        if (search) search.value = "";
+        syncFilters();
+        refresh();
+        toast("브라우저 기록을 초기화했습니다.");
+      });
+    }
+
     var bnew = qs("#btn-new");
     if (bnew) {
       bnew.addEventListener("click", function () {
