@@ -827,21 +827,38 @@
 
     var breset = qs("#btn-reset");
     if (breset) {
+      var armed = false;
+      var armTimer = null;
       breset.addEventListener("click", function () {
-        var ok = window.confirm("이 브라우저에 저장된 새 케이스와 사진을 모두 지우고 처음 상태로 돌립니다. 내려받은 JSON 백업은 그대로 남습니다. 계속할까요?");
-        if (!ok) return;
+        if (!armed) {
+          armed = true;
+          breset.setAttribute("data-armed", "true");
+          breset.textContent = "한 번 더 누르면 초기화됩니다";
+          if (armTimer) window.clearTimeout(armTimer);
+          armTimer = window.setTimeout(function () {
+            armed = false;
+            breset.removeAttribute("data-armed");
+            breset.textContent = "이 브라우저 기록 초기화";
+          }, 5000);
+          return;
+        }
+        armed = false;
+        if (armTimer) window.clearTimeout(armTimer);
+        breset.removeAttribute("data-armed");
+        breset.textContent = "이 브라우저 기록 초기화";
+
         state.photos = {};
         state.custom = [];
-        saveJSON(KEY_PHOTOS, state.photos);
-        saveJSON(KEY_CASES, state.custom);
         state.trackFilter = "all";
         state.subjectFilter = "all";
         state.query = "";
         var search = qs("#search-input");
         if (search) search.value = "";
+        saveJSON(KEY_PHOTOS, state.photos);
+        saveJSON(KEY_CASES, state.custom);
         syncFilters();
         refresh();
-        toast("브라우저 기록을 초기화했습니다.");
+        toast("브라우저 기록을 초기화했습니다. 시드 케이스만 남았습니다.");
       });
     }
 

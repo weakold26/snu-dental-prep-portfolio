@@ -928,6 +928,13 @@ a { color: inherit; text-decoration: none; }
 
 .reset-btn:hover { background: #fef3f2; border-color: #fecdca; color: var(--warn); }
 
+.reset-btn[data-armed="true"] {
+  background: #fef3f2;
+  border-color: #fda29b;
+  color: var(--warn);
+  font-weight: 700;
+}
+
 .note {
   display: flex;
   gap: 12px;
